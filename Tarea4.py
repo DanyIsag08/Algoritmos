@@ -13,15 +13,15 @@ def contar_digitos(n):
     else:
         return 1 + contar_digitos(n // 10)
 
-def eliminarElementoMedio(pila, index):
+def eliminarElementoMedio(pila, contador):
     elementoActual = pila.pop()
     
     if not pila:  
         pila.append(elementoActual)
-        return math.ceil(index / 2)  
-    mitad = eliminarElementoMedio(pila, index + 1)
+        return math.ceil(contador / 2)  
+    mitad = eliminarElementoMedio(pila, contador + 1)
 
-    if index != mitad:  
+    if contador!= mitad:  
         pila.append(elementoActual)
 
     return mitad
